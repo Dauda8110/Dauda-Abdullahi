@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdullah Dauda: Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4fa;--ink:#141c36;--mute:#5a6483;--line:#d5daea;--acc:#3350ff;--panel:#e8ecf7;--artl:42;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1530;--ink:#e9edfb;--mute:#9aa4c7;--line:#27305a;--acc:#8fa3ff;--panel:#161d40;--artl:68}}
+:root[data-theme="dark"]{--bg:#0f1530;--ink:#e9edfb;--mute:#9aa4c7;--line:#27305a;--acc:#8fa3ff;--panel:#161d40;--artl:68}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+#art{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,var(--bg) 14%,transparent 62%);pointer-events:none}
+.top{position:absolute;top:0;left:0;right:0;z-index:2;padding-top:calc(env(safe-area-inset-top,0px) + 18px)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.top nav{display:flex;gap:20px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--ink);opacity:.85}
+.top nav a:hover{opacity:1;text-decoration:underline}
+.btn{font:500 15px/1 "IBM Plex Sans",system-ui,sans-serif;border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:11px 16px;border-radius:999px;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.solid:hover{filter:brightness(1.1)}
+:root[data-theme="dark"] .btn.solid{color:#0f1530}
+.heroText{position:relative;z-index:2;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 44px)}
+h1{font-size:clamp(46px,10vw,112px);font-weight:800;max-width:11ch}
+.lede{font-size:clamp(18px,2.4vw,22px);max-width:34em;margin:18px 0 26px;color:var(--mute)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hint{font-size:14px;color:var(--mute);margin-left:4px}
+section{padding:84px 0 12px}
+h2{font-size:clamp(30px,5vw,46px);font-weight:700;margin-bottom:28px}
+.proj{border-top:1px solid var(--line);padding:26px 0;display:grid;grid-template-columns:1fr 2fr;gap:8px 32px}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj h3{font-size:24px;font-weight:700}
+.proj .tech{color:var(--acc);font-size:15px;margin:6px 0 0}
+.proj ul{margin:0;padding-left:20px}
+.proj li{margin-bottom:6px}
+dl{margin:0;display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--line)}
+dt,dd{margin:0;padding:14px 0;border-bottom:1px solid var(--line)}
+dt{font-weight:500}
+dd{color:var(--mute)}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:26px}
+.job{position:relative;padding-bottom:30px}
+.job::before{content:"";position:absolute;left:-33px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--acc)}
+.job h3{font-size:21px;font-weight:700}
+.job .meta{color:var(--mute);font-size:15px;margin:2px 0 8px}
+.job p{margin:0 0 6px}
+.about{max-width:62ch}
+.about p{margin:0 0 16px}
+#code{display:none;margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;overflow-x:auto;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
+#code.open{display:block}
+.contact{padding-bottom:70px}
+.contact .big{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:clamp(26px,5.6vw,56px);letter-spacing:-.02em;word-break:break-word}
+.contact-wa{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+.contact-loc{font-size:14px;color:var(--mute)}
+.contact-social{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.contact .btn{display:inline-flex;align-items:center;text-decoration:none}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:var(--mute);text-decoration:none}
+.footer-links a:hover{color:var(--ink);text-decoration:underline}
+footer{border-top:1px solid var(--line);padding:22px 0 28px;color:var(--mute);font-size:14px}
+@media (max-width:680px){.proj{grid-template-columns:1fr}dl{grid-template-columns:1fr}dt{border-bottom:0;padding-bottom:0}.top nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <canvas id="art" aria-hidden="true"></canvas>
+  <div class="top"><div class="wrap">
+    <strong style="font-family:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;font-size:19px">Abdullah Dauda</strong>
+    <nav aria-label="Sections"><a href="#work">Work</a><a href="#stack">Stack</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+    <button class="btn" id="theme" type="button">Switch theme</button>
+  </div></div>
+  <div class="heroText"><div class="wrap">
+    <h1>I build things for the web.</h1>
+    <p class="lede">Full-stack developer and digital artist from Lagos. I design the interface, build the backend, and ship it.</p>
+    <div class="row">
+      <a class="btn solid" href="#work" style="text-decoration:none">See my work</a>
+      <button class="btn" id="remix" type="button">Remix the art</button>
+      <span class="hint">The background is code I wrote. Move your cursor through it.</span>
+    </div>
+  </div></div>
+</header>
+
+<main>
+<section id="work"><div class="wrap">
+  <h2>Selected work</h2>
+  <article class="proj">
+    <div><h3>Task Manager</h3><p class="tech">React, Node.js, MongoDB, Firebase</p></div>
+    <ul>
+      <li>Full-stack task platform with user authentication and task categories.</li>
+      <li>Real-time updates through Firebase and optimized database queries.</li>
+      <li>Deployed on Heroku.</li>
+    </ul>
+  </article>
+  <article class="proj">
+    <div><h3>Personal portfolio</h3><p class="tech">HTML, CSS, JavaScript</p></div>
+    <ul>
+      <li>Responsive, accessible site with interactive components and animation.</li>
+      <li>SEO best practices, hosted on GitHub Pages.</li>
+    </ul>
+  </article>
+  <article class="proj">
+    <div><h3>Digital art websites</h3><p class="tech">HTML, CSS, JavaScript</p></div>
+    <ul>
+      <li>Several websites built around digital art, where the visuals carry the design.</li>
+    </ul>
+  </article>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <h2>What I work with</h2>
+  <dl>
+    <dt>Front-end</dt><dd>HTML, CSS, JavaScript, React, responsive design</dd>
+    <dt>Back-end</dt><dd>Node.js, REST APIs, authentication, Java, C++</dd>
+    <dt>Data</dt><dd>Supabase, MySQL, MongoDB, Firebase</dd>
+    <dt>AI</dt><dd>Automation, prompt engineering, model training</dd>
+    <dt>Design</dt><dd>Digital art, website design, basic graphic design</dd>
+    <dt>Tools</dt><dd>Git, Docker, Linux, AWS, Heroku, GitHub Pages</dd>
+  </dl>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="job"><h3>IT Support and Internal Control Intern</h3><div class="meta">CardForte, Lagos, 2025</div>
+      <p>Set up secure servers for encrypted data, cutting downtime by 20%.</p>
+      <p>Ran 50+ application test cases and reported bugs for faster fixes.</p>
+      <p>Provided technical support that cut resolution time by 30%.</p></div>
+    <div class="job"><h3>Freelance Writer and Marketing Consultant</h3><div class="meta">Remote, 2022 to 2023</div>
+      <p>20+ pieces of content for tech, lifestyle, and business clients. Campaigns raised client sales by 18% on average.</p></div>
+    <div class="job"><h3>Founder, CARZZCONNECT</h3><div class="meta">Lagos, 2024 to present</div>
+      <p>Planning an automotive marketplace for Nigeria, now in pre-launch.</p></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <h2>About</h2>
+  <p>I hold a B.Sc. in Computer Science from the University of Ilorin (2026, Second Class Upper). I like projects where engineering and design meet, and I’m comfortable on both sides.</p>
+  <p>Outside of code, I communicate clearly, I draw, and I’ve been driving for eight years.</p>
+  <button class="btn" id="showcode" type="button" aria-expanded="false" aria-controls="code">Show the code behind the hero art</button>
+<pre id="code" tabindex="0">// a flow field: every particle follows an angle that depends on where it is
+function angle(x, y, t) {
+  return (Math.sin(x * 0.003 + seed)
+        + Math.cos(y * 0.004 - seed * 0.7)
+        + Math.sin((x + y) * 0.002 + t * 0.2)) * Math.PI;
+}
+for (const p of particles) {
+  const a = angle(p.x, p.y, t);
+  p.x += Math.cos(a) * 1.2;
+  p.y += Math.sin(a) * 1.2;
+  // push away from the cursor
+  const d = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+  if (d &lt; 120) { p.x += (p.x - mouse.x) / d * 3; p.y += (p.y - mouse.y) / d * 3; }
+  ctx.fillRect(p.x, p.y, 1.4, 1.4); // the trail comes from a faint fade each frame
+}</pre>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let’s work together</h2>
+  <p>Open to full-stack and web development roles, and to freelance builds.</p>
+  <a class="big" href="mailto:abdullahdauda811@gmail.com">abdullahdauda811@gmail.com</a>
+  <div class="contact-wa">
+    <a class="btn solid" href="https://wa.me/2349165187961?text=Hi%20Abdullah%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+    <span class="contact-loc">Lagos, Nigeria</span>
+  </div>
+  <div class="contact-social">
+    <a class="btn" href="https://instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="Abdullah on Instagram">Instagram</a>
+    <a class="btn" href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="Abdullah on LinkedIn">LinkedIn</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap footer-row">
+  <span>Designed and coded by Abdullah Dauda.</span>
+  <span class="footer-links">
+    <a href="https://instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="Abdullah on Instagram">Instagram</a>
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="Abdullah on LinkedIn">LinkedIn</a>
+  </span>
+</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('art'),x=c.getContext('2d'),root=document.documentElement;
+  var w,h,dpr,P=[],t=0,seed=Math.random()*1000,hue=225,raf=0,mouse={x:-999,y:-999};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function css(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+  function fill(a){x.globalAlpha=a;x.fillStyle=css('--bg');x.fillRect(0,0,w,h);x.globalAlpha=1}
+  function size(){dpr=Math.min(window.devicePixelRatio||1,2);w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);fill(1);
+    P=[];var n=Math.min(700,Math.floor(w*h/1800));for(var i=0;i<n;i++)P.push({x:Math.random()*w,y:Math.random()*h,a:Math.random()});
+    if(reduce){for(var k=0;k<260;k++)step()}}
+  function angle(px,py){return(Math.sin(px*.003+seed)+Math.cos(py*.004-seed*.7)+Math.sin((px+py)*.002+t*.2))*Math.PI}
+  function step(){
+    t+=.016;fill(.06);var l=css('--artl')||'50';
+    for(var i=0;i<P.length;i++){var p=P[i],a=angle(p.x,p.y);
+      p.x+=Math.cos(a)*1.2;p.y+=Math.sin(a)*1.2;
+      var dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120&&d>0){p.x+=dx/d*3;p.y+=dy/d*3}
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      x.fillStyle='hsla('+(hue+p.a*80)+',85%,'+l+'%,.85)';x.fillRect(p.x,p.y,1.4,1.4)}
+  }
+  function loop(){step();raf=requestAnimationFrame(loop)}
+  function start(){cancelAnimationFrame(raf);if(!reduce)loop()}
+  c.parentNode.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+  c.parentNode.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999});
+  document.getElementById('remix').onclick=function(){seed=Math.random()*1000;hue=Math.floor(Math.random()*360);size();start()};
+  document.getElementById('theme').onclick=function(){
+    var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme',dark?'light':'dark');size();start()};
+  var cb=document.getElementById('showcode'),pre=document.getElementById('code');
+  cb.onclick=function(){var o=pre.classList.toggle('open');cb.setAttribute('aria-expanded',o);cb.textContent=o?'Hide the code':'Show the code behind the hero art'};
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){size();start()},150)});
+  size();start();
+})();
+</script>
+</body>
+</html>
